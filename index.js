@@ -3,6 +3,7 @@ const app = express();
 const port = 3000
 
 app.set('view engine', 'ejs')
+app.use(express.urlencoded({extended: true}))
 
 app.get('/', (req,res)=>{
     res.render('index')
@@ -23,6 +24,10 @@ app.get('/:nome/:sobrenome', (req,res)=>{
 app.get('/soma/:x/:y', (req,res)=>{
     const soma = parseInt(req.params.x)+parseInt(req.params.y)
     res.send("O resultado da soma é: "+soma)
+})
+
+app.post('/pesquisar', (req, res) => {
+    res.send("Dados recebidos: "+req.body.nome)
 })
 
 app.listen(port)
