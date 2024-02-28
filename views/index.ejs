@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Info</title>
+</head>
+<body>
+    <h1>Oi Mundo!</h1>
+
+    <form action="/pesquisar" method="get">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" required id="nome" placeholder="Digite seu nome."><br>
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade" min="0" step="1" placeholder="Digite sua idade."><br>
+        <label for="data">Data de nascimento</label>
+        <input type="datetime-local" name="data" id="data"><br>
+        <label for="cor">Cor</label>
+        <input type="color" name="cor" id="cor"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Digite seu email."><br>
+        <fieldset>
+            <legend>Interesses</legend>
+            <label for="interesse">Futebol</label>
+            <input type="checkbox" name="interesse" id="interesse" value="futebol">
+            <label for="interesse">Volei</label>
+            <input type="checkbox" name="interesse" id="interesse" value="volei">
+            <label for="interesse">Handebol</label>
+            <input type="checkbox" name="interesse" id="interesse" value="handebol">
+            <label for="interesse">Corrida</label>
+            <input type="checkbox" name="interesse" id="interesse" value="corrida">
+        </fieldset>
+        <label for="cidade">Cidade</label>
+        <select name="cidade" id="cidade" multiple>
+            <optgroup label="Região da campanha">
+                <option value="Bagé">Bagé</option>
+                <option value="Hulha Negra">Hulha Negra</option>
+                <option value="Aceguá">Aceguá</option>
+                <option value="Candiota">Candiota</option>
+            </optgroup>
+            <optgroup label="Região metropolitana">
+                <option value="Porto Alegre">Porto Alegre</option>
+                <option value="Canoas">Canoas</option>
+            </optgroup>            
+        </select><br>
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
