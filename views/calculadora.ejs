@@ -20,5 +20,8 @@
         <input type="number" name="valor2" id="valor2"><br>
         <input type="submit" value="Enviar">
     </form>
+    <%if(typeof resultado !== "undefined"){%>
+        <h4>O resultado é: <%=resultado%></h4>
+    <%}%>
 </body>
 </html>

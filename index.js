@@ -38,8 +38,19 @@ app.post('/calculadora', (req,res)=>{
             resultado = valor1*valor2; 
             break;
     }
-    res.send("O resultado da "+operacao+" é "+resultado);
+    res.render('calculadora',{operacao:operacao, resultado:resultado})
+    
+    //res.send("O resultado da "+operacao+" é "+resultado);
 
+})
+
+app.get('/tabela',(req,res)=>{
+    res.render('tabela')
+})
+
+app.post('/tabela',(req,res)=>{
+    console.log(req.body.linhas)
+    res.render('tabela', {linhas:req.body.linhas})
 })
 
 app.get('/:nome', (req,res)=>{

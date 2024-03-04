@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Tabela</title>
+    <style>
+        table{
+            border: 4px solid black;
+        }
+        tr,td {
+            border: 2px solid black;
+
+        }
+        td{
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <label for="linhas">Linhas</label>
+        <input type="number" min='1' name="linhas" id="linhas">
+        <input type="submit" value="Criar">
+    </form>
+
+    
+    <%if(typeof linhas !=='undefined'){%>
+        <table>
+            <%for(let i = 1;i<=linhas;i++){%>
+                <tr>
+                    <td><%=i%></td>
+                </tr>
+            <%}%>
+        </table>
+    <%}%>
+    
+
+</body>
+</html>
