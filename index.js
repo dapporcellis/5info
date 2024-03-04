@@ -13,6 +13,35 @@ app.get('/diego', (req,res)=>{
     res.send("Hello Diego!")
 })
 
+//rota para abrir a página calculadora.ejs
+app.get('/calculadora', (req,res)=>{
+    res.render('calculadora')
+})
+
+//rota para receber dados da calculadora e mostrar o resultado final
+app.post('/calculadora', (req,res)=>{
+    const operacao = req.body.operacao;
+    const valor1 = parseInt(req.body.valor1)
+    const valor2 = parseInt(req.body.valor2)
+    let resultado;
+    switch(operacao){
+        case 'soma': 
+            resultado = valor1+valor2; 
+            break;
+        case 'subtracao': 
+            resultado = valor1-valor2; 
+            break;
+        case 'divisao': 
+            resultado = valor1/valor2; 
+            break;
+        case 'multiplicacao': 
+            resultado = valor1*valor2; 
+            break;
+    }
+    res.send("O resultado da "+operacao+" é "+resultado);
+
+})
+
 app.get('/:nome', (req,res)=>{
     res.send(req.params.nome)
 })
