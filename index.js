@@ -50,7 +50,7 @@ app.get('/tabela',(req,res)=>{
 
 app.post('/tabela',(req,res)=>{
     console.log(req.body.linhas)
-    res.render('tabela', {linhas:req.body.linhas})
+    res.render('tabela', {linhas:req.body.linhas,colunas:req.body.colunas})
 })
 
 app.get('/:nome', (req,res)=>{

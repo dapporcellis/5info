@@ -22,15 +22,21 @@
     <form method="post">
         <label for="linhas">Linhas</label>
         <input type="number" min='1' name="linhas" id="linhas">
+        <label for="colunas">Colunas</label>
+        <input type="number" min='1' name="colunas" id="colunas">
         <input type="submit" value="Criar">
     </form>
 
     
-    <%if(typeof linhas !=='undefined'){%>
+    <%if(typeof linhas !=='undefined'&&typeof colunas !=='undefined'){%>
         <table>
+            <%let num = 1;%>
             <%for(let i = 1;i<=linhas;i++){%>
                 <tr>
-                    <td><%=i%></td>
+                    <%for(let j = 1;j<=colunas;j++){%>
+                        <td><%=num%></td>
+                        <%num++;%>
+                    <%}%>
                 </tr>
             <%}%>
         </table>
