@@ -1,11 +1,19 @@
 import express from 'express';
 const router = express.Router();
-import { upload,helloworld,hellonome,abrecalculadora,calculadora,abretabela,tabela,qualquernome,nomesobrenome,soma,pesquisar, abrirupload } from '../controllers/controllers.js';
+
+//import { upload,helloworld,hellonome,abrecalculadora,calculadora,abretabela,tabela,qualquernome,nomesobrenome,soma,pesquisar, abrirupload } from '../controllers/controllers.js';
+
+
 
 import multer from 'multer';
 const foto = multer({dest:'./public'})
 
 
+
+
+
+
+/*
 router.get('/', helloworld)
 
 router.get('/diego', hellonome)
@@ -31,6 +39,6 @@ router.get('/soma/:x/:y', soma)
 
 router.post('/pesquisar', pesquisar)
 
-
+*/
 
 export default router;
