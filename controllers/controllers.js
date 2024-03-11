@@ -57,3 +57,11 @@ export function soma(req,res){
 export function pesquisar(req, res) {
     res.send("Dados recebidos: "+req.body.nome)
 }
+
+export function abrirupload(req, res) {
+    res.render('upload')
+}
+
+export function upload(req, res) {
+    res.send("<img src='/"+req.file.filename+"'>")
+}

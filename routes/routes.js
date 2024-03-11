@@ -1,8 +1,10 @@
 import express from 'express';
 const router = express.Router();
-import { soma, nomesobrenome, hellonome, 
-    helloworld, calculadora, abrecalculadora, 
-    abretabela, tabela, qualquernome, pesquisar } from '../controllers/controllers';
+import { upload,helloworld,hellonome,abrecalculadora,calculadora,abretabela,tabela,qualquernome,nomesobrenome,soma,pesquisar, abrirupload } from '../controllers/controllers.js';
+
+import multer from 'multer';
+const foto = multer({dest:'./public'})
+
 
 router.get('/', helloworld)
 
@@ -18,6 +20,9 @@ router.get('/tabela', abretabela)
 
 router.post('/tabela', tabela)
 
+router.get('/upload', abrirupload)
+router.post('/upload', foto.single('foto') , upload)
+
 router.get('/:nome', qualquernome)
 
 router.get('/:nome/:sobrenome', nomesobrenome)
@@ -25,5 +30,7 @@ router.get('/:nome/:sobrenome', nomesobrenome)
 router.get('/soma/:x/:y', soma)
 
 router.post('/pesquisar', pesquisar)
+
+
 
 export default router;
