@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar dados do usuário</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        div{
+            background-color: white;
+            margin: auto;
+            width: 1024px;
+            text-align: center;
+            padding: 5px;
+            padding-bottom: 20px;
+        }
+        table{
+            font-size: larger;
+            margin-top: 50px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, td, th{
+            border: 3px solid black;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="/<%=foto%>" alt="Foto do usuário">
+        <table>
+            <tr>
+                <th>Nome:</th>
+                <td><%=nome%></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><%=email%></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

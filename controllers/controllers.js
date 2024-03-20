@@ -1,3 +1,5 @@
+import Usuario from '../models/usuario.js'
+
 export function helloworld(req,res){
     res.render('index')
 }
@@ -64,4 +66,29 @@ export function abrirupload(req, res) {
 
 export function upload(req, res) {
     res.send("<img src='/"+req.file.filename+"'>")
+}
+
+export function abretela(req,res){
+    res.render('usuario')
+}
+
+export async function mostradados(req,res){
+    const usuario = new Usuario({
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: req.body.senha,
+        foto: req.file.filename,
+        datanasc: req.body.datanasc
+    })
+
+    console.log(usuario)
+
+    await usuario.save()
+    res.render('usuario')
+
+    //usuario.save((err,result) => {
+    //    res.render('usuario')
+    //})
+
+
 }
