@@ -72,7 +72,7 @@ export function abretela(req,res){
     res.render('usuario')
 }
 
-export async function mostradados(req,res){
+export async function cadastrausuario(req,res){
     const usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
@@ -90,5 +90,9 @@ export async function mostradados(req,res){
     //    res.render('usuario')
     //})
 
+}
 
+export async function mostrausuarios(req, res) {
+    let usuarios = await Usuario.find({})
+    res.render('mostrausuarios',{Usuarios:usuarios})
 }

@@ -3,13 +3,15 @@ const router = express.Router();
 
 //import { upload,helloworld,hellonome,abrecalculadora,calculadora,abretabela,tabela,qualquernome,nomesobrenome,soma,pesquisar, abrirupload } from '../controllers/controllers.js';
 
-import {abretela,mostradados} from '../controllers/controllers.js';
+import {abretela,cadastrausuario, mostrausuarios} from '../controllers/controllers.js';
 
 import multer from 'multer';
 const foto = multer({dest:'./public'})
 
 router.get('/usuario', abretela)
-router.post('/usuario', foto.single('foto'), mostradados)
+router.post('/usuario', foto.single('foto'), cadastrausuario)
+
+router.get('/mostrausuarios', mostrausuarios)
 
 /*
 router.get('/', helloworld)
