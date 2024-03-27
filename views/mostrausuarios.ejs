@@ -19,6 +19,7 @@
             <th>Nome</th>
             <th>Email</th>
             <th>Foto</th>
+            <th>Editar</th>
         </tr>
         <% Usuarios.forEach(function(usuario){ %>
             <tr>
@@ -26,6 +27,9 @@
                 <td><%=usuario.email%></td>
                 <td>
                     <img src="/<%=usuario.foto%>" width="200px" alt="Foto do perfil">
+                </td>
+                <td>
+                    <a href="/editarusuario/<%=usuario._id%>">Editar</a>
                 </td>
             </tr>
         <%})%>

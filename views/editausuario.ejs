@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuário</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        div{
+            background-color: white;
+            margin: auto;
+            width: 1024px;
+            text-align: left;
+            padding: 5px;
+            padding-bottom: 20px;
+            
+        }
+        input{
+            margin-top: 5px;
+            padding: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <label for="id">Id</label>
+            <input type="text" name="_id" id="id" readonly value="<%=Usuario._id%>"><br>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome." value="<%=Usuario.nome%>"><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu email." value="<%=Usuario.email%>"><br>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" placeholder="Digite sua senha." value="<%=Usuario.senha%>"><br>
+            <label for="datanasc">Data de Nascimento</label>
+            <input type="date" name="datanasc" id="datanasc" value="<%=Usuario.datanasc%>"><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
