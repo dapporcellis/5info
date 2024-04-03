@@ -94,7 +94,7 @@ export async function mostrausuarios(req, res) {
 }
 
 export async function buscarusuarios(req, res) {
-    let usuarios = await Usuario.find({nome: req.body.pesquisar})
+    let usuarios = await Usuario.find({nome: new RegExp(req.body.pesquisar, 'i')})
     res.render('mostrausuarios',{Usuarios:usuarios})
 }
 
