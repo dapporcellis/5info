@@ -112,3 +112,8 @@ export async function editarusuario(req, res) {
     await usuario.save()
     res.redirect('/mostrausuarios')
 }
+
+export async function deletarusuario(req,res){
+    let usuario = await Usuario.findByIdAndDelete(req.params.id)
+    res.redirect('/mostrausuarios')
+}

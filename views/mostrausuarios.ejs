@@ -5,6 +5,7 @@
         <th>Email</th>
         <th>Foto</th>
         <th>Editar</th>
+        <th>Deletar</th>
     </tr>
     <% Usuarios.forEach(function(usuario){ %>
     <tr>
@@ -16,7 +17,11 @@
         <td>
             <a href="/editarusuario/<%=usuario._id%>">Editar</a>
         </td>
+        <td>
+            <a href="/deletarusuario/<%=usuario._id%>">Deletar</a>
+        </td>
     </tr>
     <%})%>
 </table>
+
 <%-include('rodape.ejs')%>
