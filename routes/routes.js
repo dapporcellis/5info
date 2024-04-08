@@ -1,6 +1,8 @@
 import express from 'express';
 const router = express.Router();
 
+import passport from '../config/passport.js';
+
 //import { upload,helloworld,hellonome,abrecalculadora,calculadora,abretabela,tabela,qualquernome,nomesobrenome,soma,pesquisar, abrirupload } from '../controllers/controllers.js';
 
 import {
@@ -10,7 +12,8 @@ import {
     mostrausuarios,
     buscarusuarios,
     abretelaeditar,
-    editarusuario
+    editarusuario,
+    abrelogin
 } from '../controllers/controllers.js';
 
 import multer from 'multer';
@@ -28,6 +31,13 @@ router.get('/editarusuario/:id', abretelaeditar)
 router.post('/editarusuario/:id', editarusuario)
 
 router.get('/deletarusuario/:id', deletarusuario)
+
+router.get('/', abrelogin)
+
+router.post('/', passport.authenticate('local', {
+    successRedirect: '/usuario',
+    failureRedirect: '/'
+}));
 
 /*
 router.get('/', helloworld)

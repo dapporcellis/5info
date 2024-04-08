@@ -117,3 +117,7 @@ export async function deletarusuario(req,res){
     let usuario = await Usuario.findByIdAndDelete(req.params.id)
     res.redirect('/mostrausuarios')
 }
+
+export async function abrelogin(req, res){
+    res.render('login.ejs')
+}
