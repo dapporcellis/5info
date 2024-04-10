@@ -1,5 +1,6 @@
 import express from 'express';
 const router = express.Router();
+import autenticacao from '../config/autenticacao.js'
 
 import passport from '../config/passport.js';
 
@@ -21,16 +22,16 @@ const foto = multer({
     dest: './public'
 })
 
-router.get('/usuario', abretela)
-router.post('/usuario', foto.single('foto'), cadastrausuario)
+router.get('/usuario',autenticacao, abretela)
+router.post('/usuario',autenticacao, foto.single('foto'), cadastrausuario)
 
-router.get('/mostrausuarios', mostrausuarios)
-router.post('/mostrausuarios', buscarusuarios)
+router.get('/mostrausuarios',autenticacao, mostrausuarios)
+router.post('/mostrausuarios',autenticacao, buscarusuarios)
 
-router.get('/editarusuario/:id', abretelaeditar)
-router.post('/editarusuario/:id', editarusuario)
+router.get('/editarusuario/:id',autenticacao, abretelaeditar)
+router.post('/editarusuario/:id',autenticacao, editarusuario)
 
-router.get('/deletarusuario/:id', deletarusuario)
+router.get('/deletarusuario/:id',autenticacao, deletarusuario)
 
 router.get('/', abrelogin)
 
