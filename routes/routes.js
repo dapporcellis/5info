@@ -14,7 +14,14 @@ import {
     buscarusuarios,
     abretelaeditar,
     editarusuario,
-    abrelogin
+    abrelogin,
+    abrepostadd,
+    postadd,
+    postlist,
+    postfiltro,
+    postdelete,
+    abrepostedit,
+    postedit
 } from '../controllers/controllers.js';
 
 import multer from 'multer';
@@ -39,6 +46,25 @@ router.post('/', passport.authenticate('local', {
     successRedirect: '/usuario',
     failureRedirect: '/'
 }));
+
+//abre a tela de post add
+router.get('/postadd', abrepostadd)
+//recebe dados de post add
+router.post('/postadd',foto.single('foto'), postadd)
+
+//rota para listar os posts
+router.get('/postlist', postlist)
+//rota para listar os posts com filtro
+router.post('/postlist', postfiltro)
+
+//rota para deletar post
+router.get('/postdelete/:id', postdelete)
+
+//rota de abrir tela de edit do post
+router.get('/postedit/:id', abrepostedit)
+//rota para editar dados do post
+router.post('/postedit/:id',foto.single('foto'), postedit)
+
 
 /*
 router.get('/', helloworld)

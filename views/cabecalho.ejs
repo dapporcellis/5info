@@ -22,13 +22,6 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse my-3 justify-content-end" id="navbarSupportedContent">
-                            <form class="d-flex" method="post" action="/mostrausuarios" role="search">
-                                <input class="form-control me-2" name="pesquisar" type="search" placeholder="Buscar"
-                                    aria-label="Search">
-                                <button class="btn btn-secundary bg-danger bg-gradient p-2 " type="submit">Buscar</button>
-                            </form>                            
-                        </div>
                     </div>
                 </nav>
             </div>
@@ -43,6 +36,14 @@
                     <li class="nav-item mt-2">
                         <a class="nav-link" href="/usuario"><i class="bi bi-person-plus-fill"></i> Adicionar
                             Usuários</a>
+                    </li>
+                    <li class="nav-item mt-2">
+                        <a class="nav-link active" aria-current="page" href="/postlist"><i
+                                class="bi bi-list-ol"></i> Listar Posts</a>
+                    </li>
+                    <li class="nav-item mt-2">
+                        <a class="nav-link" href="/postadd"><i class="bi bi-person-plus-fill"></i> Adicionar
+                            Posts</a>
                     </li>
                 </ul>
             </div>

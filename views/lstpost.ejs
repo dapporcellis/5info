@@ -8,24 +8,26 @@
 </div>
 <table class="table table-hover rounded">
     <tr>
-        <th>Nome</th>
-        <th>Email</th>
+        <th>Título</th>
+        <th>Tags</th>
         <th>Foto</th>
+        <th>Status</th>
         <th>Editar</th>
         <th>Deletar</th>
     </tr>
-    <% Usuarios.forEach(function(usuario){ %>
+    <% Posts.forEach(function(post){ %>
     <tr>
-        <td><%=usuario.nome%></td>
-        <td><%=usuario.email%></td>
+        <td><%=post.titulo%></td>
+        <td><%=post.tags%></td>
         <td>
-            <img class="img-thumbnail img-fluid" src="/<%=usuario.foto%>" width="200" alt="Foto do perfil">
+            <img class="img-thumbnail img-fluid" src="/<%=post.foto%>" width="200" alt="Foto do post">
+        </td>
+        <td><%=post.status%></td>
+        <td>
+            <a href="/postedit/<%=post._id%>">Editar</a>
         </td>
         <td>
-            <a href="/editarusuario/<%=usuario._id%>">Editar</a>
-        </td>
-        <td>
-            <a href="/deletarusuario/<%=usuario._id%>">Deletar</a>
+            <a href="/postdelete/<%=post._id%>">Deletar</a>
         </td>
     </tr>
     <%})%>

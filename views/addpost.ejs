@@ -1,0 +1,33 @@
+<%-include('cabecalho.ejs') %>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" class='form-control' name="titulo" id="titulo" placeholder="Digite o título da publicação.">
+        <label class="form-label" for="titulo">Título:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" name="texto" placeholder="Digite o texto da publicação." id="texto"></textarea>
+        <label for="texto">Texto:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class='form-control' name="tags" id="tags"
+            placeholder="Digite as Tags da publicação separadas por ,.">
+        <label class="form-label" for="tags">Tags:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="file" class='form-control' name="foto" id="foto">
+        <label class="form-label" for="foto">Foto:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <select class="form-select" name="status" id="status" aria-label="Selecione o status da publicação.">
+            <option selected>Selecione apenas um status</option>
+            <option value="Postado">Postado</option>
+            <option value="Rascunho">Rascunho</option>
+        </select>
+        <label for="status">Selecione um status para a publicação</label>
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary mb-3" value="Enviar">
+        <input type="reset" class="btn btn-secundary mb-3" value="Limpar">
+    </div>
+</form>
+<%-include('rodape.ejs') %>
