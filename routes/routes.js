@@ -40,6 +40,7 @@ router.post('/editarusuario/:id',autenticacao, editarusuario)
 
 router.get('/deletarusuario/:id',autenticacao, deletarusuario)
 
+//rota para abrir a tela de login
 router.get('/', abrelogin)
 
 router.post('/', passport.authenticate('local', {
@@ -48,22 +49,22 @@ router.post('/', passport.authenticate('local', {
 }));
 
 //abre a tela de post add
-router.get('/postadd', abrepostadd)
+router.get('/postadd',autenticacao, abrepostadd)
 //recebe dados de post add
-router.post('/postadd',foto.single('foto'), postadd)
+router.post('/postadd',autenticacao, foto.single('foto'), postadd)
 
 //rota para listar os posts
-router.get('/postlist', postlist)
+router.get('/postlist',autenticacao, postlist)
 //rota para listar os posts com filtro
-router.post('/postlist', postfiltro)
+router.post('/postlist',autenticacao, postfiltro)
 
 //rota para deletar post
-router.get('/postdelete/:id', postdelete)
+router.get('/postdelete/:id',autenticacao, postdelete)
 
 //rota de abrir tela de edit do post
-router.get('/postedit/:id', abrepostedit)
+router.get('/postedit/:id',autenticacao, abrepostedit)
 //rota para editar dados do post
-router.post('/postedit/:id',foto.single('foto'), postedit)
+router.post('/postedit/:id',autenticacao, foto.single('foto'), postedit)
 
 
 /*
